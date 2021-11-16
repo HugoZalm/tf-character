@@ -3,7 +3,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-chart',
-  templateUrl: 'chart.html'
+  templateUrl: 'chart.component.html'
 })
 export class ChartComponent implements OnChanges {
 

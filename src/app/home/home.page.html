@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-navbar color="secondary">
+  <ion-toolbar color="secondary">
     <ion-title>
       Digit Recognizer
     </ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
@@ -13,7 +13,7 @@
     <div class="col-sm">
       <h3>Draw Here</h3>
         <div class="wrapper">
-            <canvas drawable (newImage)="predict($event)" ></canvas><br>
+            <canvas appDrawable (newImage)="predict($event)" ></canvas><br>
         </div>
 
         <button ion-button (click)="eraseButton()">Erase</button>
@@ -21,7 +21,7 @@
     </div>
     <div class="col-sm">
         <h3>TensorFlow Prediction</h3>
-        <chart [data]="prediction"></chart>
+        <app-chart [data]="prediction"></app-chart>
     </div>
   </div>
 </div>
