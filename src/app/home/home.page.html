@@ -1,20 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-navbar color="secondary">
     <ion-title>
-      Blank
+      Digit Recognizer
     </ion-title>
-  </ion-toolbar>
+  </ion-navbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm">
+      <h3>Draw Here</h3>
+        <div class="wrapper">
+            <canvas drawable (newImage)="predict($event)" ></canvas><br>
+        </div>
+
+        <button ion-button (click)="eraseButton()">Erase</button>
+
+    </div>
+    <div class="col-sm">
+        <h3>TensorFlow Prediction</h3>
+        <chart [data]="prediction"></chart>
+    </div>
   </div>
+</div>
+
+<hr>
+
+<h5 color="red">*IF ON A SLOW CONNECTION, WAIT!!!</h5>
+
 </ion-content>
